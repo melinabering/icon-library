@@ -19,7 +19,18 @@
 
 			<v-toolbar-title>TeamMate+</v-toolbar-title>
 			<v-spacer></v-spacer>
-			icon
+
+			<v-btn icon class="ml-4">
+				<v-icon>mdi-compass</v-icon>
+			</v-btn>
+
+			<v-btn icon class="ml-4">
+				<v-icon>mdi-star</v-icon>
+			</v-btn>
+
+			<v-btn icon class="ml-4">
+				<v-icon>mdi-dots-vertical</v-icon>
+			</v-btn>
 		</v-app-bar>
 
 		<v-main>

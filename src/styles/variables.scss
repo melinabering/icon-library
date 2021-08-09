@@ -1,10 +1,10 @@
 // src/sass/variables.scss
 
 // Globals
-$body-font-family: 'Work Sans',
+$body-font-family: 'Fira Sans',
 serif;
 $border-radius-root: 6px;
-$font-size-root: 10px; // 14px
+$font-size-root: 16px; // 14px
 
 // Variables must come before the import
 $btn-letter-spacing: 0;
@@ -22,7 +22,7 @@ $headings: ('h1': ('size': 3.3125rem,
         'line-height': 1.5em));
 
 
-        
+
 // Track
 /* width */
 ::-webkit-scrollbar {
@@ -45,3 +45,56 @@ $headings: ('h1': ('size': 3.3125rem,
 ::-webkit-scrollbar-thumb:hover {
     background: #ccc;
 }
+
+// Buttons
+$btn-border-radius: 0;
+$btn-text-transform: normal !default;
+$btn-letter-spacing: normal !default;
+$btn-hover-opacity: 0.9 !default;
+
+.v-btn:hover {
+    background-color: #003d61;
+}
+
+// Card
+$card-actions-padding :8px !default;
+$card-adjacent-sibling-text-padding-top: 0 !default;
+$card-border-radius: 0 !default;
+$card-btn-margin-x: 8px !default;
+$card-btn-padding: 0 8px !default;
+$card-btn-small-margin-x: 4px !default;
+$card-disabled-opacity: 0.6 !default;
+$card-elevation: 2 !default;
+$card-hover-elevation :8 !default;
+$card-link-focus-opacity: 0.08 !default;
+$card-outlined-border-width: thin !default;
+$card-overflow-wrap: break-word !default;
+$card-raised-elevation: 8 !default;
+// $card-shaped-border-radius: map-get($rounded, 'xl') $card-border-radius !default;
+$card-subtitle-padding :16px !default;
+// $card-text-font-size: map-deep-get($headings, 'subtitle-2', 'size') !default;
+$card-text-font-weight :400 !default;
+// $card-text-letter-spacing :map-deep-get($headings, 'subtitle-2', 'letter-spacing') !default;
+// $card-text-line-height: map-deep-get($headings, 'subtitle-2', 'line-height') !default;
+$card-title-adjacent-sibling-subtitle-margin-top :-16px !default;
+$card-title-adjacent-sibling-subtitle-text-padding-top: 0 !default;
+// $card-title-font-size: map-deep-get($headings, 'h6', 'size') !default;
+// $card-title-font-weight: map-deep-get($headings, 'h6', 'weight') !default;
+// $card-title-letter-spacing :map-deep-get($headings, 'h6', 'letter-spacing') !default;
+// $card-title-line-height: map-deep-get($headings, 'h6', 'line-height') !default;
+$card-title-word-break :break-all !default;
+$card-white-space :normal !default;
+
+
+// Dialog
+$dialog-border-radius: 0 !default;
+$dialog-card-subtitle-padding: 0 24px 20px !default;
+$dialog-card-actions-padding :8px 16px !default;
+$dialog-card-text-padding: 0 24px 20px !default;
+// $dialog-card-title-font-size: map-deep-get($headings, 'h6', 'size') !default;
+// $dialog-card-title-font-weight :map-deep-get($headings, 'h6', 'weight') !default;
+// $dialog-card-title-letter-spacing: map-deep-get($headings, 'h6', 'letter-spacing') !default;
+$dialog-card-title-padding: 16px 24px 10px !default;
+$dialog-elevation: 24 !default;
+$dialog-margin: 24px !default;
+$dialog-max-height: 90% !default;

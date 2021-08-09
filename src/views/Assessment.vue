@@ -3,20 +3,6 @@
 		<v-toolbar flat color="grey lighten-4" dense>
 			<v-toolbar-title>Assessment</v-toolbar-title>
 
-			<v-spacer></v-spacer>
-
-			<v-btn icon>
-				<v-icon>mdi-magnify</v-icon>
-			</v-btn>
-
-			<v-btn icon>
-				<v-icon>mdi-heart</v-icon>
-			</v-btn>
-
-			<v-btn icon>
-				<v-icon>mdi-dots-vertical</v-icon>
-			</v-btn>
-
 			<template v-slot:extension>
 				<v-tabs v-model="currentItem">
 					<v-tab v-for="item in items" :key="item" :href="'#tab-' + item">
@@ -55,7 +41,8 @@
 			v-model="search"
 			append-icon="mdi-magnify"
 			label="Search"
-			single-line
+			outlined
+			dense
 			hide-details
 		></v-text-field>
 		<v-data-table
@@ -175,14 +162,14 @@ export default {
 	}),
 
 	methods: {
-		addItem(item) {
-			const removed = this.items.splice(0, 1)
-			this.items.push(...this.more.splice(this.more.indexOf(item), 1))
-			this.more.push(...removed)
-			this.$nextTick(() => {
-				this.currentItem = 'tab-' + item
-			})
-		},
+		// addItem(item) {
+		// 	const removed = this.items.splice(0, 1)
+		// 	this.items.push(...this.more.splice(this.more.indexOf(item), 1))
+		// 	this.more.push(...removed)
+		// 	this.$nextTick(() => {
+		// 		this.currentItem = 'tab-' + item
+		// 	})
+		// },
 	},
 }
 </script>
