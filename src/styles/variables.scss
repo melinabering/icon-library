@@ -1,0 +1,47 @@
+// src/sass/variables.scss
+
+// Globals
+$body-font-family: 'Work Sans',
+serif;
+$border-radius-root: 6px;
+$font-size-root: 10px; // 14px
+
+// Variables must come before the import
+$btn-letter-spacing: 0;
+$btn-font-weight: 400;
+$list-item-title-font-size: 0.929rem;
+$list-item-dense-title-font-size: 0.929rem;
+$list-item-dense-title-font-weight: initial;
+$fab-icon-sizes: ('small': 20);
+$btn-sizes: ('default': 41,
+    'large': 54);
+
+$headings: ('h1': ('size': 3.3125rem,
+        'line-height': 1.15em),
+    'h2': ('size': 2.25rem,
+        'line-height': 1.5em));
+
+
+        
+// Track
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #f6f6f6;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dadada;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}

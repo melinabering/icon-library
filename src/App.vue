@@ -1,56 +1,101 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+	<v-app id="inspire">
+		<v-navigation-drawer v-model="drawer" clipped app>
+			<v-list dense nav>
+				<v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+					<v-list-item-icon>
+						<v-icon>{{ item.icon }}</v-icon>
+					</v-list-item-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+					<v-list-item-content>
+						<v-list-item-title>{{ item.title }}</v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+			</v-list>
+		</v-navigation-drawer>
 
-      <v-spacer></v-spacer>
+		<v-app-bar color="primary" dark dense clipped-left app>
+			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+			<v-toolbar-title>TeamMate+</v-toolbar-title>
+			<v-spacer></v-spacer>
+			icon
+		</v-app-bar>
 
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
+		<v-main>
+			<!-- Content here -->
+			<router-view></router-view>
+		</v-main>
+	</v-app>
 </template>
 
+//
 <script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-});
+export default {
+	data() {
+		return {
+			items: [
+				{ title: 'My Home', icon: 'mdi-home-outline', to: '/home' },
+				{
+					title: 'Dashboard',
+					icon: 'mdi-view-dashboard-outline',
+					to: '/dashboard',
+				},
+				{
+					title: 'Assessment',
+					icon: 'mdi-clipboard-outline',
+					to: '/assessment',
+				},
+				{
+					title: 'Audit Plan',
+					icon: 'mdi-clipboard-outline',
+					to: '/auditplan',
+				},
+				{ title: 'Project', icon: 'mdi-clipboard-outline', to: '/project' },
+				{
+					title: 'Time Tracking',
+					icon: 'mdi-clock-outline',
+					to: '/timetracking',
+				},
+				{
+					title: 'Notifications',
+					icon: 'mdi-bell-outline',
+					to: '/notifications',
+				},
+				{ title: 'My Schedule', icon: 'mdi-calendar', to: '/myschedule' },
+				{
+					title: 'Self-Assessment',
+					icon: 'mdi-account-outline',
+					to: '/selfassessment',
+				},
+				{ title: 'Survey', icon: 'mdi-list', to: '/survey' },
+				{
+					title: 'Audit Report',
+					icon: 'mdi-view-dashboard',
+					to: '/auditreport',
+				},
+				{
+					title: 'Response Tracking',
+					icon: 'mdi-alert-circle-outline',
+					to: '/responsetracking',
+				},
+				{
+					title: 'Issue Tracking',
+					icon: 'mdi-alert-outline',
+					to: '/issuetracking',
+				},
+				{
+					title: 'TeamInsights Reports',
+					icon: 'mdi-note-outline',
+					to: '/temainsightreports',
+				},
+				{ title: 'TeamStore', icon: 'mdi-store-outline', to: '/teamstore' },
+				{ title: 'Setup', icon: 'mdi-tools', to: '/setup' },
+				{ title: 'Icons', icon: 'mdi-tools', to: '/icons' },
+			],
+			right: null,
+			drawer: null,
+		}
+	},
+}
 </script>
