@@ -1,5 +1,7 @@
 <template>
-	<div class="about">
-		<h1>This is dashboard page</h1>
-	</div>
+	<v-row>
+		<v-col>
+			This is a dashboard
+		</v-col>
+	</v-row>
 </template>

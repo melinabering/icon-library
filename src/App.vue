@@ -92,6 +92,7 @@ export default {
 				{ title: 'TeamStore', icon: 'mdi-store-outline', to: '/teamstore' },
 				{ title: 'Setup', icon: 'mdi-tools', to: '/setup' },
 				{ title: 'Icons', icon: 'mdi-tools', to: '/icons' },
+				{ title: 'Agile Audit', icon: 'mdi-tools', to: '/agileaudit' },
 			],
 			right: null,
 			drawer: null,

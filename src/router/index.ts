@@ -40,6 +40,24 @@ const routes: Array<RouteConfig> = [
 		component: () =>
 			import(/* webpackChunkName: "icons" */ '../views/Icons.vue'),
 	},
+	{
+		path: '/agileaudit',
+		name: 'AgileAudit',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(/* webpackChunkName: "AgileAudit" */ '../views/AgileAudit.vue'),
+	},
+	{
+		path: '/assessment',
+		name: 'Assessment',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(/* webpackChunkName: "Assessment" */ '../views/Assessment.vue'),
+	},
 ]
 
 const router = new VueRouter({
