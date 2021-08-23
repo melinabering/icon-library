@@ -1,7 +1,7 @@
 <template>
 	<v-app id="inspire">
 		<v-navigation-drawer v-model="drawer" clipped app>
-			<v-list dense nav>
+			<v-list dense nav @click="drawer = !drawer">
 				<v-list-item v-for="item in items" :key="item.title" link :to="item.to">
 					<v-list-item-icon>
 						<v-icon>{{ item.icon }}</v-icon>
@@ -107,7 +107,7 @@ export default {
 			],
 			right: null,
 			drawer: null,
-		}
+		};
 	},
-}
+};
 </script>

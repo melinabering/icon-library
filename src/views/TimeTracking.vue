@@ -35,6 +35,11 @@
 			</v-col>
 			<v-col></v-col>
 		</v-toolbar>
+		<ckeditor
+			:editor="editor"
+			v-model="editorData"
+			:config="editorConfig"
+		></ckeditor>
 	</div>
 </template>
 
@@ -47,6 +52,11 @@ export default {
 		menu: false,
 		modal: false,
 		menu2: false,
+		// editor: ClassicEditor,
+		// editorData: '<p>Content of the editor.</p>',
+		// editorConfig: {
+		// The configuration of the editor.
+		// },
 	}),
 }
 </script>

@@ -1,59 +1,57 @@
 <template>
 	<v-row>
 		<v-col>
-			<v-simple-table fixed-header dense>
-				<template v-slot:default>
-					<thead>
-						<tr>
-							<th class="text-left">
-								Action
-							</th>
-							<th class="text-left">
-								User
-							</th>
-							<th class="text-left">
-								Date
-							</th>
-							<th class="text-left">
-								Title
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr v-for="item in edithistorydata" :key="item.name">
-							<td>{{ item.action }}</td>
-							<td>{{ item.user }}</td>
-							<td>{{ item.date }}</td>
-							<td>{{ item.title }}</td>
-						</tr>
-					</tbody>
+			<v-data-table
+				:headers="headers"
+				:items="editHistoryContent"
+				sort-by="user"
+				dense
+			>
+				<template v-slot:top> </template>
+				<template v-slot:item.view="{ item }">
+					<v-icon small class="mr-2" @click="editItem(item)">
+						mdi-view-split-vertical
+					</v-icon>
 				</template>
-			</v-simple-table>
+			</v-data-table>
 		</v-col>
 	</v-row>
 </template>
 <script>
 export default {
 	name: 'DatatableEditHistory',
-	data() {
-		return {
-			edithistorydata: [
-				{
-					action: 'Deleted',
-					user: 'Miles Hitchcock',
-					date: '07/30/2021',
-					title: '[Story] Send Planning Memo',
-				},
-				{
-					action: 'Created',
-					user: 'Miles Hitchcock',
-					date: '07/30/2021',
-					title: 'Sprint 1',
-				},
-			],
-		}
-	},
-}
+	data: () => ({
+		dialog: false,
+		dialogDelete: false,
+		headers: [
+			{
+				text: 'Dessert (100g serving)',
+				align: 'start',
+				sortable: false,
+				value: 'name',
+			},
+			{ text: 'User', value: 'user' },
+			{ text: 'Date', value: 'date' },
+			{ text: 'Title', value: 'title' },
+
+			{ text: 'View', value: 'view', sortable: false },
+		],
+		editHistoryContent: [
+			{
+				name: 'Frozen Yogurt',
+				user: 159,
+				date: 6.0,
+				title: 24,
+			},
+			{
+				name: 'Ice cream sandwich',
+				user: 237,
+				date: 9.0,
+				title: 37,
+			},
+		],
+	}),
+};
 </script>
 
 <style></style>

@@ -50,11 +50,11 @@ $headings: ('h1': ('size': 3.3125rem,
 $btn-border-radius: 0;
 $btn-text-transform: normal !default;
 $btn-letter-spacing: normal !default;
-$btn-hover-opacity: 0.9 !default;
+// $btn-hover-opacity: 0.9 !default;
 
-.v-btn:hover {
-    background-color: #003d61;
-}
+// .v-btn:hover {
+//     background-color: #003d61;
+// }
 
 // Card
 $card-actions-padding :8px !default;
@@ -98,3 +98,7 @@ $dialog-card-title-padding: 16px 24px 10px !default;
 $dialog-elevation: 24 !default;
 $dialog-margin: 24px !default;
 $dialog-max-height: 90% !default;
+
+.v-app-bar.border-bottom {
+    border-bottom: 1px solid #dadada !important;
+}
