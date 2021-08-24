@@ -84,33 +84,36 @@
 											<v-container>
 												<v-row>
 													<v-col cols="12" sm="6" md="4">
-														<label for="">Date</label>
-														<v-text-field
-															v-model="editedItem.date"
-															outlined
-															readonly
-															dense
-															tile
-														></v-text-field>
-													</v-col>
-													<v-col cols="12" sm="6" md="4">
 														<label for="">Status</label>
 														<v-text-field
 															v-model="editedItem.status"
-															outlined
-															readonly
+															disabled
+															solo
 															dense
 															tile
+															class="rounded-0"
 														></v-text-field>
 													</v-col>
 													<v-col cols="12" sm="6" md="4">
 														<label for="">User</label>
 														<v-text-field
 															v-model="editedItem.user"
-															outlined
 															readonly
+															solo
 															dense
 															tile
+															class="rounded-0"
+														></v-text-field>
+													</v-col>
+													<v-col cols="12" sm="6" md="4">
+														<label for="">Date</label>
+														<v-text-field
+															v-model="editedItem.date"
+															readonly
+															solo
+															dense
+															tile
+															class="rounded-0"
 														></v-text-field>
 													</v-col>
 												</v-row>
@@ -284,13 +287,13 @@ export default {
 		fixedHeader: true,
 		drawer: false,
 		headers: [
+			{ text: 'Action', value: 'status' },
+			{ text: 'User', value: 'user' },
 			{
 				text: 'Date',
 				align: 'status',
 				value: 'date',
 			},
-			{ text: 'Action', value: 'status' },
-			{ text: 'User', value: 'user' },
 			{ text: 'View', value: 'actions', sortable: false },
 		],
 		historyData: [],
