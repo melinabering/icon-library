@@ -1,8 +1,14 @@
 <template>
 	<v-app id="inspire">
 		<v-navigation-drawer v-model="drawer" clipped app>
-			<v-list dense nav @click="drawer = !drawer">
-				<v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+			<v-list dense nav>
+				<v-list-item
+					v-for="item in items"
+					:key="item.title"
+					link
+					:to="item.to"
+					@click="drawer = !drawer"
+				>
 					<v-list-item-icon>
 						<v-icon>{{ item.icon }}</v-icon>
 					</v-list-item-icon>
@@ -104,6 +110,11 @@ export default {
 				{ title: 'Setup', icon: 'mdi-tools', to: '/setup' },
 				{ title: 'Icons', icon: 'mdi-tools', to: '/icons' },
 				{ title: 'Agile Audit', icon: 'mdi-tools', to: '/agileaudit' },
+				{
+					title: 'User Permissions',
+					icon: 'mdi-tools',
+					to: '/userpermissions',
+				},
 			],
 			right: null,
 			drawer: null,
