@@ -107,7 +107,8 @@ export default {
 					to: '/temainsightreports',
 				},
 				{ title: 'TeamStore', icon: 'mdi-store-outline', to: '/teamstore' },
-				{ title: 'Setup', icon: 'mdi-tools', to: '/setup' },
+				// { title: 'Setup', icon: 'mdi-tools', to: '/setup' },
+				{ title: 'Icons 2', icon: 'mdi-tools', to: '/setup' },
 				{ title: 'Icons', icon: 'mdi-tools', to: '/icons' },
 				{ title: 'Agile Audit', icon: 'mdi-tools', to: '/agileaudit' },
 				{
