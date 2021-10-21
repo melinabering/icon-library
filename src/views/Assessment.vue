@@ -1,57 +1,62 @@
 <template>
 	<div>
-		<v-toolbar flat color="grey lighten-4" dense>
-			<v-toolbar-title>Assessment</v-toolbar-title>
+		<v-toolbar flat color="primary" dark dense class="py-0 pr-0" height="40px;">
+			<v-tabs v-model="currentItem" hide-slider>
+				<v-tab v-for="item in items" :key="item" :href="'#tab-' + item">
+					{{ item }}
+				</v-tab>
 
-			<template v-slot:extension>
-				<v-tabs v-model="currentItem">
-					<v-tab v-for="item in items" :key="item" :href="'#tab-' + item">
-						{{ item }}
-					</v-tab>
+				<v-menu v-if="more.length" bottom left>
+					<template v-slot:activator="{ on, attrs }">
+						<v-btn text class="align-self-center mr-4" v-bind="attrs" v-on="on">
+							More
+							<v-icon right>
+								mdi-menu-down
+							</v-icon>
+						</v-btn>
+					</template>
 
-					<v-menu v-if="more.length" bottom left>
-						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								text
-								class="align-self-center mr-4"
-								v-bind="attrs"
-								v-on="on"
-							>
-								more
-								<v-icon right>
-									mdi-menu-down
-								</v-icon>
-							</v-btn>
-						</template>
+					<v-list tile dense>
+						<v-list-item
+							v-for="item in more"
+							:key="item"
+							@click="addItem(item)"
+						>
+							{{ item }}
+						</v-list-item>
+					</v-list>
+				</v-menu>
+			</v-tabs>
 
-						<v-list class="grey lighten-3">
-							<v-list-item
-								v-for="item in more"
-								:key="item"
-								@click="addItem(item)"
-							>
-								{{ item }}
-							</v-list-item>
-						</v-list>
-					</v-menu>
-				</v-tabs>
-			</template>
+			<v-spacer></v-spacer>
+			<v-sheet
+				color="success darken-2"
+				dark
+				elevation="0"
+				height="40px"
+				width="100"
+				class="pa-2"
+				>TeamMate+</v-sheet
+			>
 		</v-toolbar>
-		<v-text-field
-			v-model="search"
-			append-icon="mdi-magnify"
-			label="Search"
-			outlined
-			dense
-			hide-details
-		></v-text-field>
-		<v-data-table
-			:headers="headers"
-			:items="desserts"
-			:search="search"
-			:items-per-page="5"
-			class="elevation-0"
-		></v-data-table>
+		<v-container fluid>
+			<v-text-field
+				v-model="search"
+				append-icon="mdi-magnify"
+				label="Search"
+				outlined
+				dense
+				hide-details
+			></v-text-field>
+			<v-data-table
+				dense
+				:headers="headers"
+				:items="desserts"
+				:search="search"
+				:items-per-page="20"
+				class="elevation-0"
+			></v-data-table>
+		</v-container>
 	</div>
 </template>
 
@@ -171,6 +176,6 @@ export default {
 		// 	})
 		// },
 	},
-}
+};
 </script>
 <style></style>

@@ -46,6 +46,9 @@ $headings: ('h1': ('size': 3.3125rem,
     background: #ccc;
 }
 
+//  app-bar
+$app-bar-elevation: 2 !default;
+
 // Buttons
 $btn-border-radius: 0;
 $btn-text-transform: normal !default;
@@ -57,7 +60,7 @@ $btn-letter-spacing: normal !default;
 // }
 
 // Card
-$card-actions-padding :8px !default;
+$card-actions-padding:8px !default;
 $card-adjacent-sibling-text-padding-top: 0 !default;
 $card-border-radius: 0 !default;
 $card-btn-margin-x: 8px !default;
@@ -70,18 +73,10 @@ $card-link-focus-opacity: 0.08 !default;
 $card-outlined-border-width: thin !default;
 $card-overflow-wrap: break-word !default;
 $card-raised-elevation: 8 !default;
-// $card-shaped-border-radius: map-get($rounded, 'xl') $card-border-radius !default;
 $card-subtitle-padding :16px !default;
-// $card-text-font-size: map-deep-get($headings, 'subtitle-2', 'size') !default;
 $card-text-font-weight :400 !default;
-// $card-text-letter-spacing :map-deep-get($headings, 'subtitle-2', 'letter-spacing') !default;
-// $card-text-line-height: map-deep-get($headings, 'subtitle-2', 'line-height') !default;
 $card-title-adjacent-sibling-subtitle-margin-top :-16px !default;
 $card-title-adjacent-sibling-subtitle-text-padding-top: 0 !default;
-// $card-title-font-size: map-deep-get($headings, 'h6', 'size') !default;
-// $card-title-font-weight: map-deep-get($headings, 'h6', 'weight') !default;
-// $card-title-letter-spacing :map-deep-get($headings, 'h6', 'letter-spacing') !default;
-// $card-title-line-height: map-deep-get($headings, 'h6', 'line-height') !default;
 $card-title-word-break :break-all !default;
 $card-white-space :normal !default;
 
@@ -91,14 +86,53 @@ $dialog-border-radius: 0 !default;
 $dialog-card-subtitle-padding: 0 24px 20px !default;
 $dialog-card-actions-padding :8px 16px !default;
 $dialog-card-text-padding: 0 24px 20px !default;
-// $dialog-card-title-font-size: map-deep-get($headings, 'h6', 'size') !default;
-// $dialog-card-title-font-weight :map-deep-get($headings, 'h6', 'weight') !default;
-// $dialog-card-title-letter-spacing: map-deep-get($headings, 'h6', 'letter-spacing') !default;
 $dialog-card-title-padding: 16px 24px 10px !default;
 $dialog-elevation: 24 !default;
 $dialog-margin: 24px !default;
 $dialog-max-height: 90% !default;
 
-.v-app-bar.border-bottom {
-    border-bottom: 1px solid #dadada !important;
+// Main
+.v-main{
+   background: whitesmoke; 
+}
+
+// Tabs
+$tab-font-size: 14px !default;
+$tab-font-weight: 400 !default;
+$tabs-bar-height: 40px !important;
+$tabs-item-letter-spacing: normal !important;
+
+.v-tab {
+    text-transform: initial !important;
+}
+
+// Textfield
+$text-field-border-radius: 0 !default;
+
+
+//  Toolbar
+
+
+// Main Nagivation Drawer
+.v-navigation-drawer.main {
+    .v-list-item {
+        border-left: .25rem solid transparent;
+        height: 38px !important;
+        color: #353535 !important;
+
+        .v-list-item__icon {
+            margin-right: 20px !important;
+        }
+    }
+
+    .v-list-item:focus,
+    .v-list-item:hover,
+    .v-list-item--active {
+        border-left: .25rem solid #005B92;
+    }
+
+    .v-list-item--active {
+        background-color: #f2f8fc !important;
+        color: #005b92 !important;
+    }
 }
